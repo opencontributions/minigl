@@ -8,10 +8,18 @@ body{
     font-family: sans-serif;
     background-color: #419de4;
     color: #fff;
+    line-height: 1.5;
+}
+h1, h2{
+    margin: 0;
+    padding: 8px;
+}
+h2{
+    font-size: 100%;
 }
 #controls{
     float: left;
-    width: 190px;
+    width: 170px;
 }
 input{
     vertical-align: middle;
