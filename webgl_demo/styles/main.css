@@ -1,0 +1,66 @@
+html, body{
+    height: 100%;
+}
+body{
+    margin: 0;
+    padding: 10px;
+    font-size: 90%;
+    font-family: sans-serif;
+    background-color: #419de4;
+    color: #fff;
+}
+#controls{
+    float: left;
+    width: 190px;
+}
+input{
+    vertical-align: middle;
+    width: 100px;
+    height: 20px;
+}
+input.colour{
+    width: 40px;
+}
+fieldset{
+    margin: 8px;
+    padding: 8px;
+    border: 1px solid #eee;
+}
+label{
+    display: block;
+}
+canvas{
+    display: block;
+    float: right;
+    width: calc(100% - 200px);
+}
+.github{
+    position: fixed;
+    top: -15px;
+    right: -35px;
+    width: 100px;
+    height: 60px;
+    transform: rotate(45deg);
+    background-color: #c93f26;
+}
+.github svg {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 16px);
+}
+.github svg path{
+    fill: #fff;
+}
+@media (max-width: 850px)  {
+    #controls{
+        float: none;
+        width: auto;
+    }
+    fieldset fieldset{
+        float: left;
+    }
+    canvas{
+        float: none;
+        width: 100%;
+    }
+}

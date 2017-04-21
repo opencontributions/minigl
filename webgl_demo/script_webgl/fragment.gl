@@ -1,0 +1,27 @@
+precision mediump float;
+
+varying vec2 fragTexCoord;
+varying vec3 fragNormal;
+
+uniform vec3 uLight0Val;
+uniform vec3 uLight0Dir;
+uniform vec3 uLight1Val;
+uniform vec3 uLight1Dir;
+
+uniform sampler2D sampler;
+
+void main()
+{
+    vec3 surfaceNormal = normalize(fragNormal);
+    vec3 normLight0Dir = normalize(uLight0Dir);
+    vec3 normLight1Dir = normalize(uLight1Dir);
+    vec4 texel = texture2D(sampler, fragTexCoord);
+
+    vec3 lightIntensity = uLight0Val * max(dot(surfaceNormal, normLight0Dir), 0.0) + uLight1Val * max(dot(surfaceNormal, normLight1Dir), 0.0);
+
+    gl_FragColor = vec4(texel.rgb * lightIntensity, texel.a);
+    if(gl_FragColor.a < 0.5) discard;
+    if(gl_FragColor.r > 0.97) gl_FragColor.r = 0.97;
+    if(gl_FragColor.g > 0.97) gl_FragColor.g = 0.97;
+    if(gl_FragColor.b > 0.97) gl_FragColor.b = 0.97;
+}
