@@ -1,6 +1,6 @@
 import mat4 from './vendor/gl-matrix/mat4';
 import multiXhr from './multi-xhr';
-class webglCanvas {
+class miniGL {
     constructor(glCtx) {
         this.glCtx = glCtx;
     }
@@ -239,4 +239,4 @@ class webglCanvas {
         requestAnimationFrame(this.animationLoop.bind(this));
     }
 }
-export {webglCanvas as default};
+export {miniGL as default};

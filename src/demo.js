@@ -1,4 +1,4 @@
-import webglCanvas from './minigl';
+import miniGL from './minigl';
 var controls = [
     {
       legend: 'camera',
@@ -226,7 +226,7 @@ window.addEventListener('load', function load(event){
     var glCtx = can.getContext('webgl') || can.getContext('experimental-webgl');
     var shaders = ['webgl_demo/script_webgl/fragment.gl', 'webgl_demo/script_webgl/vertex.gl'];
     
-    var webGl = new webglCanvas(glCtx);
+    var webGl = new miniGL(glCtx);
     webGl.initProgram(shaders, function() {
         var chest = this.createModel(
             ['webgl_demo/models_webgl/model_chest.json'],
